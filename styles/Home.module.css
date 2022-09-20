@@ -85,7 +85,6 @@
   max-width: 400px;
   padding: 2em 3em;
   border-top-left-radius: 50px;
-  border-bottom-right-radius: 10px;
   box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
   text-align: center;
 }
@@ -189,17 +188,18 @@
     margin: auto;
     flex-direction: column;
   }
-  .form:not(border-bottom-right-radius) {
+  .form:not(border-top-left-radius) {
     margin-top: 5%;
     min-width: 370px;
   }
-  .tips:not(margin-top):not(margin-bottom) {
+  .tips:not(margin-top):not(margin-bottom):not(
+    border-top-right-radius) {
     width: 100%;
     background-color: rgb(35, 30, 61);
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
     min-width: 370px;
-    margin-top: 1px;
+    border-top-right-radius: 0;
+    margin-top: 0px;
+    padding-bottom: 50px;
   }
 }
 
