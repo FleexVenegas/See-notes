@@ -1,0 +1,81 @@
+.header{
+    margin: 10px;
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__cinte{
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+}
+
+.header__logo{
+    margin: auto;
+    cursor: pointer;
+}
+
+.links{
+    margin: auto;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+}
+.header__btn{
+    background: none;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+.header__btn:hover{
+    color: red;
+}
+
+.header__logins{
+    display: flex;
+    width: 100%;
+    max-width: 300px;
+}
+
+.logins__a{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.a__login{
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.a__login:hover{
+    opacity: 0.8;
+    border: 1px solid rgb(231, 184, 184);
+}
+
+.a__logiN{
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid white;
+    font-family: 'Roboto', sans-serif;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.a__logiN:hover{
+    opacity: 0.8;
+    border: 1px solid rgb(231, 184, 184);
+}
+
