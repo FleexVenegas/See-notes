@@ -191,6 +191,7 @@
   }
   .form:not(border-top-left-radius) {
     margin-top: 0px;
+    margin-bottom: 15px;
     min-width: 370px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 15px;
