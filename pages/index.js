@@ -31,7 +31,7 @@ export default function Home() {
           <div className={styles.header__logins}>
             <div className={styles.logins__a}>
               <Link href="/login">
-                <a className={styles.a__login}>Sign In</a>
+                <a className={styles.a__logiN}>Sign In</a>
               </Link>
 
               <Link href="/signin">
