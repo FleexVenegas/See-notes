@@ -21,7 +21,7 @@ function layout() {
         </ul>
 
         <Link href="/signin">
-          <button className={styles.btn_login}>Sing In</button>
+          <button className={styles.btn_login}>Sign In</button>
         </Link>
 
         <Link href="/login">
