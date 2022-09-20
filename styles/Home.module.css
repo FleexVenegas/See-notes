@@ -8,7 +8,7 @@
   padding-top: 10px;
   padding-left: 2%;
   padding-right: 2%;
-  background: rgb(16,155,222);
+  background: rgb(16, 155, 222);
 }
 
 .navbar_body {
@@ -80,7 +80,7 @@
 
 .form {
   background-color: rgb(22, 20, 34);
-  margin-left: 5%;
+  margin: auto;
   width: 90%;
   max-width: 400px;
   padding: 2em 3em;
@@ -184,19 +184,32 @@
   transform: scale(1);
 }
 
-@media (max-width: 425px) {
-  .form__title {
-    font-size: 1.8rem;
+@media (max-width: 450px) {
+  .sign__card {
+    margin: auto;
+    flex-direction: column;
+  }
+  .form:not(border-bottom-right-radius) {
+    margin-top: 5%;
+    min-width: 370px;
+  }
+  .tips:not(margin-top):not(margin-bottom) {
+    width: 100%;
+    background-color: rgb(35, 30, 61);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-width: 370px;
+    margin-top: 1px;
   }
 }
 
 .tips {
   margin-top: 50px;
   margin-bottom: 50px;
+  max-width: 400px;
   margin-right: 5%;
   width: 90%;
   background-color: rgb(35, 30, 61);
-  display: flex;
   flex-direction: column;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -209,7 +222,7 @@
 }
 
 .tips__cards {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   margin-top: 3%;
   width: 100%;
@@ -217,7 +230,7 @@
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
 }
-.tips__cards h4{
+.tips__cards h4 {
   text-align: center;
 }
 
@@ -257,7 +270,6 @@
   line-height: 30px;
 }
 
-
-.footer{
+.footer {
   border: 1px solid red;
 }
