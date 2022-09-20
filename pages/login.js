@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
-import Input from "./components/Input";
+import Input from "../components/Input";
 function Form() {
   const [credentialsLogin, setCredentialsLogin] = useState({
     user: "",

@@ -2,7 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
-import Input from "./components/Input";
+import Input from "../components/Input";
 import Image from "next/image";
 
 function Signin() {
