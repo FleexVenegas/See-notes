@@ -26,7 +26,7 @@ function Form() {
         <h1>Log In</h1>
 
         <Image
-          src="/logo-login.png"
+          src="/Logo-login.png"
           alt="logo login"
           height={150}
           width={170}

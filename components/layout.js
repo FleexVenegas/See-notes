@@ -11,7 +11,7 @@ function layout() {
         </Link>
         <ul className={styles.navbar_body}>
           <li>
-            <Link href="/about">
+            <Link href="#">
               <a>About</a>
             </Link>
           </li>
