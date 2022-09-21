@@ -1,34 +1,46 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/header.module.css";
 
 function layout() {
   return (
-    <div>
-      <nav className={styles.navbar}>
-        <Link href="/">
-          <a className={styles.navbar_home}>Home</a>
-        </Link>
-        <ul className={styles.navbar_body}>
-          <li>
-            <Link href="#">
-              <a>About</a>
-            </Link>
-          </li>
-          <li>
-            <a>Soport</a>
-          </li>
-        </ul>
-
-        <Link href="/signin">
-          <button className={styles.btn_login}>Sign In</button>
-        </Link>
-
-        <Link href="/login">
-          <button className={styles.btn_login}>Log In</button>
-        </Link>
-      </nav>
-    </div>
+    <>
+      <header className={styles.header}>
+        <div className={styles.header__container}>
+          <div className={styles.header__cinte}>
+            <div className={styles.header__logo}>
+              <Link href="/">
+                <a>
+                  <Image
+                    src="/icon.png"
+                    alt="icon principal"
+                    height={60}
+                    width={60}
+                  />
+                </a>
+              </Link>
+            </div>
+            <div className={styles.links}>
+              <Link href="/about">
+                <a className={styles.header__btn}>About</a>
+              </Link>
+              <a className={styles.header__btn}>Contact</a>
+            </div>
+          </div>
+          <div className={styles.header__logins}>
+            <div className={styles.logins__a}>
+              <Link href="/login">
+                <a className={styles.a__logiN}>Log In</a>
+              </Link>
+              <Link href="/signin">
+                <a className={styles.a__logiN}>Sign In</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }
 

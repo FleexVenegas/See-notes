@@ -252,31 +252,5 @@
   );
 }
 
-.index__banner {
-  margin: 5%;
-  border-radius: 15px;
-}
 
-.index__info {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-  margin: 5%;
-  width: 90%;
-  background: rgb(39, 125, 167);
-  border-radius: 15px;
-  box-shadow: 0px 0px 5px 1px white;
-}
 
-.index__parrafo {
-  margin: 5%;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  text-align: justify;
-  line-height: 30px;
-}
-
-.footer {
-  border: 1px solid red;
-}

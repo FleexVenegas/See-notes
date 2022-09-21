@@ -1,46 +1,34 @@
-import styles from "../styles/header.module.css";
-import Link from "next/link";
+import Layout from "../components/layout";
+import styles from "../styles/body.module.css";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.header__container}>
-          <div className={styles.header__cinte}>
-            <div className={styles.header__logo}>
-              <Link href="/">
-                <a>
-                  <Image
-                    src="/icon.png"
-                    alt="icon principal"
-                    height={60}
-                    width={60}
-                  />
-                </a>
-              </Link>
-            </div>
-            <div className={styles.links}>
-              <Link href="/about">
-                <a className={styles.header__btn}>About</a>
-              </Link>
-              <a className={styles.header__btn}>Contact</a>
-            </div>
+      <div className={styles.index}>
+        <Layout />
+        <div className={styles.index__container}>
+          <div className={styles.index__banner}>
+            <Image
+              src="/notas.png"
+              alt="notas banner"
+              height={450}
+              width={450}
+            />
           </div>
-
-          <div className={styles.header__logins}>
-            <div className={styles.logins__a}>
-              <Link href="/login">
-                <a className={styles.a__logiN}>Sign In</a>
-              </Link>
-
-              <Link href="/signin">
-                <a className={styles.a__logiN}>Sign Up</a>
-              </Link>
-            </div>
+          <div className={styles.index__card}>
+            <h2>¡La vida es facil con unas notas extras!</h2>
+            <p>
+              Cuando la vida se pone exitosa y deseas captuar los momentos más
+              emocionantes que no deseas olvidar, este es un buen momentos para
+              guardarlos. Utiliza nuestra pagina web para hacerlo, es facil y
+              rapido. Sera un lugar seguro y confiable, no pierdas esta
+              oportunidad. Es tan sencillo de hacerlo, solo tienes que hacer que
+              suceda y comienza a guardar.
+            </p>
           </div>
         </div>
-      </header>
+      </div>
     </>
   );
 }

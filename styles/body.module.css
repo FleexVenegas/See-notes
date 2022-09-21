@@ -1,0 +1,73 @@
+.index {
+  width: 100%;
+  height: 100vh;
+  background: rgb(16, 155, 222);
+  background: radial-gradient(
+    circle,
+    rgba(16, 155, 222, 0.9164040616246498) 0%,
+    rgba(14, 61, 117, 1) 100%
+  );
+}
+
+.index__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8%;
+}
+
+.index__banner {
+  box-shadow: 0 0 5px 1px white;
+  border-radius: 50%;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  max-width: 400px;
+}
+
+.index__card {
+  margin: 2% 0 2% 0;
+  color: black;
+  border-radius: 15px;
+  max-width: 600px;
+  text-align: justify;
+  padding: 15px;
+  background-color: rgb(255, 255, 255, 0.6);
+  box-shadow: 0 0 5px 1px white;
+}
+
+.index__card p {
+  font-family: "Roboto", sans-serif;
+  line-height: 28px;
+}
+.index__card h2 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media (max-width: 950px) {
+  .index {
+    height: 100%;
+  }
+  .index__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .index__card {
+    max-width: 700px;
+  }
+
+  .index__card h2 {
+    font-size: 40px;
+  }
+  .index__card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+  }
+}
