@@ -1,11 +1,14 @@
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import styles from '../styles/Home.module.css'
+import styles from "../styles/Home.module.css";
 import Input from "../components/Input";
 import Image from "next/image";
 
 function Signin() {
+  const router = useRouter();
+
   const [credentials, setCredentials] = useState({
     created_user: "",
     created_email: "",
@@ -22,8 +25,16 @@ function Signin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(credentials);
-    //const response = await axios.post("/api/auth/signin", credentials);
+
+    const { created_password, created_password_comfirm } = credentials;
+
+    if (created_password != created_password_comfirm) {
+      alert("Las contraseñas no coinciden")
+    }
+    else{
+      const response = await axios.post("/api/products", credentials);
+    }
+    
   };
 
   return (
@@ -97,9 +108,8 @@ function Signin() {
             <Image src="/tips.png" alt="tips logo" height={100} width={100} />
           </div>
           <div className={styles.tips__cards}>
-          <h4>¡Some tips for a safe registration!</h4>
+            <h4>¡Some tips for a safe registration!</h4>
             <ul>
-            
               <li>
                 <p>Password must be at least 7 characters</p>
               </li>
