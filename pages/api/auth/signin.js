@@ -5,18 +5,10 @@ import bcrypt from "bcryptjs";
 
 export default async function handle(req, res) {
   switch (req.method) {
-    case "GET":
-      return await GetUsers(req, res);
-
     case "POST":
       return await SaveUsers(req, res);
   }
 }
-
-const GetUsers = async (req, res) => {
-  const [result] = await pool.query("SELECT * FROM registration");
-  return res.status(200).json(result);
-};
 
 const SaveUsers = async (req, res) => {
   const { created_user, created_email, created_password } = req.body;
