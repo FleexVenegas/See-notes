@@ -28,13 +28,16 @@ function Signin() {
 
     const { created_password, created_password_comfirm } = credentials;
 
-    if (created_password != created_password_comfirm) {
-      alert("Las contraseñas no coinciden")
+    if (created_password < 8 || created_password_comfirm < 8) {
+      alert("invalid password, check its length");
+    } else if (created_password != created_password_comfirm) {
+      alert("Passwords do not match");
+    } else {
+      const response = await axios.post("/api/auth/signin", credentials);
+      if (response.status === 200) {
+        router.push("/login");
+      }
     }
-    else{
-      const response = await axios.post("/api/products", credentials);
-    }
-    
   };
 
   return (

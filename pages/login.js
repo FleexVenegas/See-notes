@@ -3,9 +3,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Input from "../components/Input";
+import axios from "axios";
+import { useRouter } from "next/router";
 function Form() {
+  const router = useRouter();
+
   const [credentialsLogin, setCredentialsLogin] = useState({
-    user: "",
+    email: "",
     password: "",
   });
 
@@ -16,9 +20,12 @@ function Form() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(credentialsLogin)
+    const response = await axios.post("/api/auth/login", credentialsLogin);
+    if (response.status === 200) {
+      router.push("/notes.app");
+    }
   };
   return (
     <div className={styles.sign__container}>
@@ -36,14 +43,14 @@ function Form() {
           <div className={styles.form__group}>
             <Input
               attribute={{
-                id: "user",
-                name: "user",
-                type: "text",
+                id: "email",
+                name: "email",
+                type: "email",
                 placeholder: " ",
               }}
               handleChange={handleChange}
             />
-            <label className={styles.form__label}>UserName</label>
+            <label className={styles.form__label}>Email</label>
             <span className={styles.form__line}></span>
           </div>
           <div className={styles.form__group}>

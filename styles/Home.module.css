@@ -157,6 +157,12 @@
   border-radius: 0.5em;
 }
 
+.form__btn:hover {
+  background: #0943f1;
+  box-shadow: 0 0 5px 1px white;
+}
+
+
 .form__btn__cancelar {
   background: none;
   color: red;
