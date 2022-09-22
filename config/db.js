@@ -7,6 +7,9 @@ const pool = createPool({
   user: "q32f1m71vt12hmnap93x",
   password: "pscale_pw_IV4v0c0rQ8FrN7D95yc7wRdpwhxU8j22NlzgBuAIVj3",
   database: "noteapp",
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 export { pool };
