@@ -34,6 +34,7 @@ function Form() {
       setTitle(error);
       setEstado(false);
 
+    } else if (response.status === 200) {
       router.push("/notes.app");
     }
   };
