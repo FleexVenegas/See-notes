@@ -22,32 +22,17 @@ function NotesApps() {
     }
   };
 
-  // return (
-  //   <div>
-  //     <h1>Deshboard</h1>
+  return (
+    <div>
+      <h1>Deshboard</h1>
 
-  //     <pre>{JSON.stringify(user, null, 2)}</pre>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
 
-  //     <button onClick={() => getProfile()}>Get profile</button>
+      <button onClick={() => getProfile()}>Get profile</button>
 
-  //     <button onClick={() => logout()}>Log Out</button>
-  //   </div>
-  // );
-
-  return(
-    <>
-
-      <header className={styles.notes__header}>
-        <div className={styles.header__profile}>
-          <button>Agregar</button>
-        </div>
-      </header>
-
-    </>
+      <button onClick={() => logout()}>Log Out</button>
+    </div>
   );
-
-
-
 
 }
 
