@@ -68,6 +68,18 @@
   );
 }
 
+.sign__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  color: white;
+}
+
+.sign__error{
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+  color: red;
+}
+
 .sign__card {
   margin: auto;
   display: flex;

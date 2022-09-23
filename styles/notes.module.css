@@ -1,0 +1,10 @@
+.notes__header{
+    width: 100%;
+    border: 1px solid red;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.header__profile{
+    border: 1px solid yellow;
+}

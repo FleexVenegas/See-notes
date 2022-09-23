@@ -3,10 +3,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Input from "../components/Input";
-import axios from "axios";
+import axios, { Axios, AxiosError } from "axios";
 import { useRouter } from "next/router";
 function Form() {
   const router = useRouter();
+
+  const [title, setTitle] = useState("Log In");
+  const [estado, setEstado] = useState(true);
 
   const [credentialsLogin, setCredentialsLogin] = useState({
     email: "",
@@ -18,20 +21,28 @@ function Form() {
       ...credentialsLogin,
       [e.target.name]: e.target.value,
     });
+    setTitle("Log In");
+    setEstado(true);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.post("/api/auth/login", credentialsLogin);
-    if (response.status === 200) {
+
+    if (response.data.status === "401") {
+      const error = "Your email or password is incorrect";
+      setTitle(error);
+      setEstado(false);
+
       router.push("/notes.app");
     }
   };
   return (
     <div className={styles.sign__container}>
       <form className={styles.form__login}>
-        <h1>Log In</h1>
-
+        <h1 className={estado ? styles.sign__title : styles.sign__error}>
+          {title}
+        </h1>
         <Image
           src="/Logo-login.png"
           alt="logo login"
@@ -66,7 +77,6 @@ function Form() {
             <label className={styles.form__label}>Password</label>
             <span className={styles.form__line}></span>
           </div>
-
           <button className={styles.form__btn} onClick={handleSubmit}>
             Aceptar
           </button>

@@ -11,6 +11,10 @@ export default async function handle(req, res) {
     email
   );
 
+  if (result.length === 0) {
+    return res.json({ status: "401" });
+  }
+
   const dbUsername = result[0].username;
   const dbEmail = result[0].email;
   const dbPassword = result[0].clave;
@@ -36,6 +40,7 @@ export default async function handle(req, res) {
 
     res.setHeader("Set-cookie", serealized);
     return res.status(200).json({ estado: "LOGIN SUCCESFULLY" });
-  } 
-    return res.status(401).json({ estado: "ACCESO DENEGADO" });
+  } else {
+    return res.json({ status: "401" });
+  }
 }

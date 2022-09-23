@@ -2,6 +2,14 @@
 
 import { createPool } from "mysql2/promise";
 
+// const pool = createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "password",
+//   port: 3306,
+//   database: "noteapp",
+// });
+
 const pool = createPool({
   host: "us-east.connect.psdb.cloud",
   user: "q32f1m71vt12hmnap93x",
