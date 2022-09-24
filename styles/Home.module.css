@@ -254,9 +254,11 @@
   max-width: 350px;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
+  color: #fff;
 }
 .tips__cards h4 {
   text-align: center;
+  color: #fff;
 }
 
 .container__banner {

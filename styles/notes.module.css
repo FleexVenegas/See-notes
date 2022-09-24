@@ -92,6 +92,7 @@
   border: none;
   background: none;
   border: 2px solid white;
+  color: #fff;
 }
 .notes__btnLog button:hover {
   box-shadow: 0 0 5px 1px red;
