@@ -3,6 +3,7 @@
   justify-content: flex-end;
   display: flex;
   position: relative;
+  
 }
 
 .header__profile {
@@ -12,30 +13,33 @@
   width: 100%;
   border-radius: 50%;
   max-width: 50px;
+  
 }
 
 .header__input:checked + .header__menu {
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
-  margin-top: 3.6%;
-  display: flex;
+  right: 5px;
+  margin-top: 42px;
+  display: inline-flex;
   flex-direction: column;
   border-radius: 15px;
+  box-shadow: 0 0 5px 1px blue;
 }
 
 .header__menu {
-  position: absolute;
+  position: fixed;
   right: 5px;
-  margin-top: 3.6%;
-  width: 20%;
+  padding: 15px;
   height: 300px;
   display: none;
+  
 }
 
 .notes__changePhoto {
   justify-content: center;
   display: flex;
-  margin-top: 20px;
+  margin-top: 5px;
   height: 120px;
 }
 
@@ -43,9 +47,13 @@
   margin: auto;
 }
 
-.notes__subHeaderMenu {
-  margin: 0 auto;
-  height: 110px;
+.notes__dates {
+  justify-content: center;
+  display: inline-flex;
+}
+
+.notes__subDates {
+  margin: auto;
 }
 
 .notes__content {
@@ -70,7 +78,7 @@
 
 .notes__btnLog {
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
   max-width: 200px;
   display: flex;
   justify-content: center;
@@ -98,3 +106,4 @@
     rgba(2, 6, 62, 0.7511379551820728) 100%
   );
 }
+

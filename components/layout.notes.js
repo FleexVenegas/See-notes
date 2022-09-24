@@ -31,7 +31,6 @@ function NotesLayout() {
             htmlFor="menu"
             onClick={() => getProfile()}
             className={styles.header__logoProfile}
-            
           >
             <Imagen src="/usuario.png" alt="logo" height={40} width={40} />
           </label>
@@ -55,9 +54,11 @@ function NotesLayout() {
                 </label>
               </div>
             </div>
-            <div className={styles.notes__subHeaderMenu}>
-              <h3 className={styles.notes__content}> {user.username} </h3>
-              <h3 className={styles.notes__content}>{user.email}</h3>
+            <div className={styles.notes__dates}>
+              <div className={styles.notes__subDates}>
+                <h3 className={styles.notes__content}> {user.username} </h3>
+                <h3 className={styles.notes__content}>{user.email}</h3>
+              </div>
             </div>
             <div className={styles.notes__btnLog}>
               <button onClick={() => logout()}>Log Out</button>
