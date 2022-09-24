@@ -44,7 +44,7 @@ function Signin() {
     <div className={styles.sign__container}>
       <div className={styles.sign__card}>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <h1>Create an Account</h1>
+          <h1 className={styles.sign__titleAccount}>Create an Account</h1>
           <div className={styles.form__container}>
             <div className={styles.form__group}>
               <Input
