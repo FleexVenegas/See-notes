@@ -3,8 +3,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
 import Input from "../components/Input";
-import axios, { Axios, AxiosError } from "axios";
+import axios from "axios";
 import { useRouter } from "next/router";
+
 function Form() {
   const router = useRouter();
 
@@ -33,7 +34,6 @@ function Form() {
       const error = "Your email or password is incorrect";
       setTitle(error);
       setEstado(false);
-
     } else if (response.status === 200) {
       router.push("/notes.app");
     }
@@ -41,7 +41,7 @@ function Form() {
   return (
     <div className={styles.sign__container}>
       <form className={styles.form__login}>
-        <h1 className={estado ? styles.sign__title : styles.sign__error}>
+        <h1 className={ estado ? styles.sign__title : styles.sign__error }>
           {title}
         </h1>
         <Image
