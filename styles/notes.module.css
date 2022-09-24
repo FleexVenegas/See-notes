@@ -39,7 +39,7 @@
 .notes__changePhoto {
   justify-content: center;
   display: flex;
-  margin-top: 5px;
+  margin-top: 10px;
   height: 120px;
 }
 
@@ -73,7 +73,7 @@
   transition: clip-path 0.5s;
 }
 .notes__content:hover {
-  --clippy: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .notes__btnLog {
