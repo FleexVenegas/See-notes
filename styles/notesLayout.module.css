@@ -98,7 +98,7 @@
   box-shadow: 0 0 5px 1px red;
 }
 
-.notes__body {
+/* .notes__body {
   height: 100vh;
   background: rgb(13, 86, 111);
   background: radial-gradient(
@@ -106,5 +106,5 @@
     rgba(13, 86, 111, 0.9164040616246498) 0%,
     rgba(2, 6, 62, 0.7511379551820728) 100%
   );
-}
+} */
 

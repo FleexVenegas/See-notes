@@ -1,7 +1,6 @@
 import Layout from "../components/layout";
 import styles from "../styles/body.module.css";
 import Image from "next/image";
-
 export default function Home() {
   return (
     <>

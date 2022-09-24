@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Imagen from "next/image";
-import styles from "../styles/notes.module.css";
+import styles from "../styles/notesLayout.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 
