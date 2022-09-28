@@ -1,5 +1,5 @@
 .notes__body {
-  height: 100vh;
+  font-family: "Rob";
   background: rgb(13, 86, 111);
   background: radial-gradient(
     circle,
@@ -8,21 +8,55 @@
   );
 }
 
-.notes__subBody {
+.notes__ {
+  min-height: 100vh;
+  padding: 1rem 0;
+  flex: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.notes__notas {
+.notes__title {
+  font-size: 4em;
+}
+
+.notes__subBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+.notes__card {
+  color: #fff;
+  margin: 1rem;
   width: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+.notes__card:hover,
+.notes__card:focus,
+.notescard:active {
+  color: #0070f3;
+  border-color: #000;
+  box-shadow: 0 0 5px 1px #000;
 }
 
 .notes__add {
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
-  right: 40px;
-  bottom: 50px;
+  right: 25px;
+  top: 87%;
 }
+
 .notes__add:hover {
   box-shadow: 0 0 5px 1px white;
 }
@@ -85,13 +119,26 @@
   background: rgb(8, 92, 26);
 }
 
-.notes__btn:hover{
-    background: rgb(5, 56, 16);
-    
+.notes__btn:hover {
+  background: rgb(5, 56, 16);
 }
 
-.notes__atras{
-    position: absolute;
-    top: 15px;
-    left: 15px
+.notes__atras {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.notes__actualizar {
+  position: absolute;
+  border-radius: 50%;
+  left: 10px;
+  top: 10px;
+}
+
+@media (max-width: 600px) {
+  .notes__subBody {
+    width: 100%;
+    flex-direction: column;
+  }
 }

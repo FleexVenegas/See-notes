@@ -7,14 +7,16 @@ export default async function handle(req, res) {
   const { email, password } = req.body;
 
   const [result] = await pool.query(
-    "SELECT username, email, clave FROM registration WHERE email=?",
+    "SELECT username, email, id, clave FROM registration WHERE email=?",
     email
   );
+
 
   if (result.length === 0) {
     return res.json({ status: "401" });
   }
 
+  const dbId = result[0].id
   const dbUsername = result[0].username;
   const dbEmail = result[0].email;
   const dbPassword = result[0].clave;
@@ -26,6 +28,7 @@ export default async function handle(req, res) {
         exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
         email: dbEmail,
         username: dbUsername,
+        id: dbId,
       },
       "secret"
     );
@@ -39,7 +42,7 @@ export default async function handle(req, res) {
     });
 
     res.setHeader("Set-cookie", serealized);
-    return res.status(200).json({ estado: "LOGIN SUCCESFULLY" });
+    return res.status(200).json({ estado: "LOGIN SUCCESFULLY", id: dbId});
   } else {
     return res.json({ status: "401" });
   }

@@ -29,10 +29,11 @@ function Form() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios.post("/api/auth/login", credentialsLogin);
+    let id = response.data.id;
+    const ID = { id };
 
     if (response.data.status === "401") {
-      const error = "Your email or password is incorrect";
-      setTitle(error);
+      setTitle("Your email or password is incorrect");
       setEstado(false);
     } else if (response.status === 200) {
       router.push("/notes.app");
@@ -41,7 +42,7 @@ function Form() {
   return (
     <div className={styles.sign__container}>
       <form className={styles.form__login}>
-        <h1 className={ estado ? styles.sign__title : styles.sign__error }>
+        <h1 className={estado ? styles.sign__title : styles.sign__error}>
           {title}
         </h1>
         <Image
