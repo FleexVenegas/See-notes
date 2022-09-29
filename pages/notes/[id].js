@@ -18,7 +18,6 @@ function ViewNotes({ notas }) {
   return (
     <>
       <div className={styles.notas__body}>
-        <NotesLayout />
         <div className={styles.notas__central}>
           <div className={styles.notes__card}>
             <h1>{notas.title}</h1>
@@ -61,6 +60,9 @@ function ViewNotes({ notas }) {
 }
 
 export const getServerSideProps = async (ctx) => {
+  // const { data: notas } = await axios.get(
+  //   "http://localhost:3001/api/addnotes/" + ctx.query.id
+  // );
   const { data: notas } = await axios.get(
     "https://apps-notes.herokuapp.com/api/addnotes/" + ctx.query.id
   );
