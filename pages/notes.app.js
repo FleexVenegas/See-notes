@@ -20,11 +20,11 @@ export default function NotesApps({ notas }) {
           <div className={styles.notes__subBody}>
             {notas.map((nota) => (
               <Link key={nota.id} href={`/notes/${nota.id}`}>
-                  <a className={styles.notes__card}>
-                    <h1>{nota.title}</h1>
-                    <p>{nota.description}</p>
-                    <p>{nota.createAT}</p>
-                  </a>
+                <a className={styles.notes__card}>
+                  <h1>{nota.title}</h1>
+                  <p>{nota.description}</p>
+                  <p>{nota.createAT}</p>
+                </a>
               </Link>
             ))}
           </div>
@@ -43,8 +43,10 @@ export default function NotesApps({ notas }) {
 }
 
 export const getServerSideProps = async () => {
-  //const { data: notas } = await axios.get("http://localhost:3001/api/addnotes");
-  const { data: notas } = await axios.get("https://apps-notes.herokuapp.com/api/addnotes");
+  // const { data: notas } = await axios.get("http://localhost:3001/api/addnotes");
+  const { data: notas } = await axios.get(
+    "https://apps-notes.herokuapp.com/api/addnotes"
+  );
   return {
     props: {
       notas,
