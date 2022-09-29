@@ -62,11 +62,8 @@ function ViewNotes({ notas }) {
 
 export const getServerSideProps = async (ctx) => {
   const { data: notas } = await axios.get(
-    "http://localhost:3001/api/addnotes/" + ctx.query.id
+    "https://apps-notes.herokuapp.com/api/addnotes/" + ctx.query.id
   );
-
-  console.log("Notas", notas);
-
   return {
     props: {
       notas,
