@@ -1,5 +1,5 @@
 .notes__body {
-  font-family: "Rob";
+  font-family: 'Roboto', sans-serif;
   background: rgb(13, 86, 111);
   background: radial-gradient(
     circle,
@@ -19,7 +19,7 @@
 }
 
 .notes__title {
-  font-size: 4em;
+  font-size: 45px;
 }
 
 .notes__subBody {
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 100%;
 }
 .notes__card {
   color: #fff;
@@ -48,6 +48,11 @@
   color: #0070f3;
   border-color: #000;
   box-shadow: 0 0 5px 1px #000;
+}
+
+.notes__options{
+  /* border: 1px solid red; */
+  display: flex;
 }
 
 .notes__add {
@@ -142,3 +147,4 @@
     flex-direction: column;
   }
 }
+

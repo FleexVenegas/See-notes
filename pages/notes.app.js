@@ -9,22 +9,22 @@ import Head from "next/head";
 export default function NotesApps({ notas }) {
   return (
     <>
-    <Head>
-      <title>Create New Notes</title>
-    </Head>
-    
+      <Head>
+        <title>Create New Notes</title>
+      </Head>
       <div className={styles.notes__body}>
         <NotesLayout />
+
         <div className={styles.notes__}>
           <h1 className={styles.notes__title}>My notes</h1>
           <div className={styles.notes__subBody}>
             {notas.map((nota) => (
-              <Link href='#' key={nota.id}>
-              <a className={styles.notes__card}>
-                  <h1>{nota.title}</h1>
-                  <p>{nota.description}</p>
-                  <p>{nota.createAT}</p>
-              </a>
+              <Link key={nota.id} href={`/notes/${nota.id}`}>
+                  <a className={styles.notes__card}>
+                    <h1>{nota.title}</h1>
+                    <p>{nota.description}</p>
+                    <p>{nota.createAT}</p>
+                  </a>
               </Link>
             ))}
           </div>
@@ -43,7 +43,7 @@ export default function NotesApps({ notas }) {
 }
 
 export const getServerSideProps = async () => {
-  const { data: notas } = await axios.get("http://localhost:3000/api/addnotes");
+  const { data: notas } = await axios.get("http://localhost:3001/api/addnotes");
   return {
     props: {
       notas,
