@@ -1,33 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import NotesLayout from "../components/layout.notes";
 import styles from "../styles/notesBody.module.css";
+import { Notescard } from "../components/notescard";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import Head from "next/head";
 
 export default function NotesApps({ notas }) {
+  const renderNotes = () => {
+    if (notas.length === 0){ return <h1>No Notes yet</h1>;}
+    return notas.map((nota) => <Notescard key={nota.id} nota={nota} />);
+  };
   return (
     <>
       <Head>
-        <title>Create New Notes</title>
+        <title>My Notes</title>
       </Head>
       <div className={styles.notes__body}>
+        
         <NotesLayout />
-
+        {/* <h1 className={styles.notes__title}>My Notes</h1> */}
         <div className={styles.notes__}>
-          <h1 className={styles.notes__title}>My notes</h1>
-          <div className={styles.notes__subBody}>
-            {notas.map((nota) => (
-              <Link key={nota.id} href={`/notes/${nota.id}`}>
-                <a className={styles.notes__card}>
-                  <h1>{nota.title}</h1>
-                  <p>{nota.description}</p>
-                  <p>{nota.createAT}</p>
-                </a>
-              </Link>
-            ))}
-          </div>
+          
+          <div className={styles.notes__subBody}>{renderNotes()}</div>
         </div>
       </div>
 

@@ -2,21 +2,27 @@ import React from "react";
 import axios from "axios";
 import styles from "../../styles/notasEditDel.module.css";
 import stylesSub from "../../styles/notesBody.module.css";
-import NotesLayout from "../../components/layout.notes";
+import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Link from 'next/link'
+import Link from "next/link";
 
 function ViewNotes({ notas }) {
   const router = useRouter();
 
   const handleDelete = async (id) => {
-    const res = await axios.delete("/api/addnotes/" + id);
-    router.push("/notes.app");
+    try {
+      await axios.delete("/api/addnotes/" + id);
+      toast.success("Notes deleted successfully");
+      router.push("/notes.app");
+    } catch (error) {
+      toast.error("Error deleting notes");
+    }
   };
 
   return (
     <>
+      <ToastContainer />
       <div className={styles.notas__body}>
         <div className={styles.notas__central}>
           <div className={styles.notes__card}>
@@ -32,7 +38,10 @@ function ViewNotes({ notas }) {
               />
             </label>
 
-            <label className={styles.notas__edit}>
+            <label
+              className={styles.notas__edit}
+              onClick={() => router.push("/notes/edit/" + notas.id)}
+            >
               <Image
                 src="/editar.png"
                 alt="logo-delete"

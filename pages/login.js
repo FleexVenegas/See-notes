@@ -5,12 +5,10 @@ import styles from "../styles/Home.module.css";
 import Input from "../components/Input";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from 'react-toastify';
 
 function Form() {
   const router = useRouter();
-
-  const [title, setTitle] = useState("Log In");
-  const [estado, setEstado] = useState(true);
 
   const [credentialsLogin, setCredentialsLogin] = useState({
     email: "",
@@ -22,8 +20,6 @@ function Form() {
       ...credentialsLogin,
       [e.target.name]: e.target.value,
     });
-    setTitle("Log In");
-    setEstado(true);
   };
 
   const handleSubmit = async (e) => {
@@ -33,17 +29,17 @@ function Form() {
     const ID = { id };
 
     if (response.data.status === "401") {
-      setTitle("Your email or password is incorrect");
-      setEstado(false);
+      toast.error("Your email or password is incorect")
     } else if (response.status === 200) {
       router.push("/notes.app");
     }
   };
-  return (
+  return (  
     <div className={styles.sign__container}>
+      <ToastContainer/>
       <form className={styles.form__login}>
-        <h1 className={estado ? styles.sign__title : styles.sign__error}>
-          {title}
+        <h1 className={styles.sign__title }>
+          Log In
         </h1>
         <Image
           src="/Logo-login.png"

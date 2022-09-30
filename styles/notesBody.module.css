@@ -116,6 +116,7 @@
 }
 
 .notes__btn {
+  content: "Save";
   margin-top: 25px;
   height: 40px;
   border-radius: 5px;
@@ -126,6 +127,19 @@
 
 .notes__btn:hover {
   background: rgb(5, 56, 16);
+}
+
+.notes__btn__update{
+  content: "Update";
+  margin-top: 25px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  background: rgb(58, 134, 233);
+}
+.notes__btn__update:hover{
+  background: rgb(58, 140, 255);
 }
 
 .notes__atras {
