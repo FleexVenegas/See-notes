@@ -39,10 +39,10 @@ export default function NotesApps({ notas }) {
 }
 
 export const getServerSideProps = async () => {
-  //const { data: notas } = await axios.get("http://localhost:3001/api/addnotes");
-  const { data: notas } = await axios.get(
-    "https://apps-notes.herokuapp.com/api/addnotes"
-  );
+  const { data: notas } = await axios.get("http://localhost:3000/api/addnotes");
+//   const { data: notas } = await axios.get(
+//     "https://apps-notes.herokuapp.com/api/addnotes"
+//   );
   return {
     props: {
       notas,
